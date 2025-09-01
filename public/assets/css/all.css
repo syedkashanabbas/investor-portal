@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Parkinsans", sans-serif;
+}
+
+:root {
+    --primary: #1163FB;
+    --dark_primary: #004cd8;
+    --gray: #e4e4e4;
+    --dark_gray: #a0a0a0;
+    --light: #b8b8b8;
+    --dark: #1a1a1a;
+    --white: #fafafa;
+    --black: #000000;
+}
+
+/* default  */
+
+html, 
+body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+.fs_5 {
+    font-size: 1.15rem !important;
+}
+
+.fs_6 {
+    font-size: 0.95rem !important;
+}
+
+.fs_7 {
+    font-size: 0.875rem !important;
+}
+
+.dropdownMenu {
+    width: 200px;
+}
+
+/* buttons  */
+.btn_transparent {
+    background: transparent !important;
+    opacity: 0.9;
+    border: none;
+    outline: none;
+    user-select: none;
+    transition: 0.25s;
+}
+
+.btn_transparent:hover {
+    opacity: 1;
+}
+
+.btn_primary {
+    background: var(--primary);
+    color: var(--white);
+    fill: var(--white);
+    text-decoration: none !important;
+    border: 1px solid var(--primary) !important;
+    padding: 0.4rem 0.8rem;
+    outline: none;   
+    user-select: none;
+    transition: 0.25s;
+}
+
+.btn_primary:hover {
+    background: var(--dark_primary);
+    border-color: var(--dark_primary);
+}
+
+.btn_gray {
+    background: var(--gray);
+    color: var(--dark);
+    fill: var(--dark);
+    text-decoration: none !important;
+    border: 1px solid var(--gray) !important;
+    padding: 0.4rem 0.8rem;
+    outline: none;   
+    user-select: none;
+    transition: 0.25s;
+}
+
+.btn_gray:hover {
+    background: var(--dark_gray);
+    border-color: var(--dark_gray);
+    color: var(--black);
+    fill: var(--black);
+}
+
+.btn_transparent_gray {
+    background: transparent;
+    color: var(--dark);
+    fill: var(--dark);
+    text-decoration: none !important;
+    border: 1px solid transparent !important;
+    padding: 0.4rem 0.8rem;
+    outline: none;   
+    user-select: none;
+    transition: 0.25s;
+}
+
+.btn_transparent_gray:hover {
+    background: var(--gray);
+    border-color: var(--gray);
+    color: var(--black);
+    fill: var(--black);
+}
