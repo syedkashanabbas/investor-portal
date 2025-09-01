@@ -174,8 +174,13 @@
                 </ul>
             </section>
             <section id="sidebar_footer">
-                <button id="logout" class="my-2 rounded btn_primary d-flex align-items-center justify-content-center w-100">
-                    <span class="fs_7">Signout</span>
-                </button>
+            <form action="{{ route('logout') }}" method="POST" class="w-100">
+                    @csrf
+                    <button type="submit" 
+                        id="logout" 
+                        class="my-2 rounded btn_primary d-flex align-items-center justify-content-center w-100">
+                        <span class="fs_7">Signout</span>
+                    </button>
+            </form>
             </section>
         </aside>
