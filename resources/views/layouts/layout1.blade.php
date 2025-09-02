@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Dashboard')</title>
-    
+    <title>@yield('title', 'Investor Dashboard')</title>
+
     {{-- Fonts and CSS --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
             {{-- Navbar --}}
             @include('partials.navbar')
 
-            <div id="content">
+            <div id="content"  class="pt-2">
                 <div class="contentBody">
                     @yield('content')
                 </div>

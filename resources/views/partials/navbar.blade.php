@@ -1,4 +1,4 @@
-         <div id="navbar" class="gap-3 border-bottom d-flex align-items-center justify-content-between">
+         <div id="navbar" class="gap-3 sticky-top border-bottom d-flex align-items-center justify-content-between"  style="z-index: 1030;">
                 <div class="gap-3 d-none align-items-center" id="navbarLogo">
                     <button class="btn_transparent d-md-inline-flex d-none align-items-center" id="openSidebar">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" fill="var(--black)"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
@@ -54,9 +54,10 @@
                         <ul class="border-0 shadow dropdown-menu dropdownMenu">
                             <li>
                                 <a class="py-2 dropdown-item d-flex flex-column fs_7" href="#">
-                                    <span class="fw-medium fs_7">Admin</span>
-                                    <span class="fw-medium text-secondary small">View Profile</span>
-                                </a>
+                                <span class="fw-medium fs_7">{{ Auth::user()->name }}</span>
+                                <span class="fw-medium text-secondary small">View Profile</span>
+                            </a>
+
                             </li>
                             <li>
                                 <a class="py-2 dropdown-item fs_7" href="#">
