@@ -1,6 +1,6 @@
-        @php
-    $avatar = Avatar::create(Auth::user()->name)->toBase64();
-@endphp
+    @php
+    $avatar = \Laravolt\Avatar\Facade::create(Auth::user()->name)->toBase64();
+    @endphp
 
         <div id="navbar" class="gap-3 sticky-top border-bottom d-flex align-items-center justify-content-between"  style="z-index: 1030;">
                 <div class="gap-3 d-none align-items-center" id="navbarLogo">
