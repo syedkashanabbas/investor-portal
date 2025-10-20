@@ -13,6 +13,7 @@
   ];
 @endphp
 <div class="container-fluid py-4">
+  <div class="overlay-local"><span>Coming Soon</span></div>
 
   {{-- Header --}}
   <div class="d-flex align-items-center justify-content-between mb-4">
@@ -69,7 +70,7 @@
         $year = preg_match('/(20\d{2})/', $t['target'], $m) ? $m[1] : '';
       @endphp
       <div class="col-12 col-md-6 col-xl-4"
-           data-aos="fade-up"
+        
            data-sector="{{ $t['sector'] }}"
            data-stage="{{ $t['stage'] }}"
            data-year="{{ $year }}"
