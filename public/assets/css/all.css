@@ -26,7 +26,8 @@ body {
 
 html {
     scroll-behavior: smooth;
-    overflow: hidden;
+     overflow-x: hidden;
+    
 }
 
 .fs_5 {

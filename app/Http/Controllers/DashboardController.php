@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
+use App\Models\Deposit;
 
 class DashboardController extends Controller
 {
@@ -13,8 +14,13 @@ public function dashboard()
 {
     $user = Auth::user();
 
+    $approvedDepositsTotal = Deposit::where('user_id', $user->id)
+        ->where('status', 'approved')
+        ->sum('amount');
+
     return view('dashboard', [
         'name' => $user->name,
+        'approvedDepositsTotal' => $approvedDepositsTotal,
     ]);
 }
 
