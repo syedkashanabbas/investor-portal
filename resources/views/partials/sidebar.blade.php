@@ -20,6 +20,13 @@
           <span class="sidebar_link_text fs_7 fw-medium">Pannello VIP</span>
         </a>
       </li>
+     <li class="sidebar_item">
+  <a href="{{ route('investor.deposits.index') }}"
+     class="sidebar_link d-flex align-items-center text-decoration-none {{ request()->routeIs('investor.deposits.*') ? 'active' : '' }}">
+    <span class="sidebar_link_icon"><i class="fas fa-wallet"></i></span>
+    <span class="sidebar_link_text fs_7 fw-medium">Depositi</span>
+  </a>
+</li>
 
       <li class="sidebar_item">
         <a href="{{ route('investor.projects.status') }}"

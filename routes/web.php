@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InvestorDepositController;
 
 // Root: bounce to login or dashboard
 Route::get('/', function () {
@@ -20,6 +21,11 @@ Route::middleware([
 
     Route::get('/investor/projects/status', [DashboardController::class, 'projectStatus'])
         ->name('investor.projects.status');
+    // Route::get('/investor/deposits', [InvestorDepositController::class, 'index'])
+    //     ->name('investor.deposits.index');
+            Route::prefix('investor')->name('investor.')->group(function () {
+                Route::resource('deposits', InvestorDepositController::class);
+            });
 
     Route::get('/investor/reports', [DashboardController::class, 'financialReports'])
         ->name('investor.reports');
