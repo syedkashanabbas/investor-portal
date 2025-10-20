@@ -26,64 +26,80 @@
         <div class="col-md-3">
             <div class="p-4 text-center shadow card">
                 <h6 class="text-muted">Progetti Attivi</h6>
-                <h2 class="mb-0 text-success">8</h2>
+                <h2 class="mb-0 text-success">2</h2>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="p-4 text-center shadow card">
+      <div class="col-md-3">
+            <div class="card position-relative overflow-hidden text-center p-4 shadow">
+                <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <span class="fs-4 fw-bold text-white">Coming Soon</span>
+                </div>
                 <h6 class="text-muted">Crescita Annuale</h6>
                 <h2 class="mb-0 text-warning">14%</h2>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="p-4 text-center shadow card">
+            </div>
+
+            <div class="col-md-3">
+            <div class="card position-relative overflow-hidden text-center p-4 shadow">
+                <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <span class="fs-4 fw-bold text-white">Coming Soon</span>
+                </div>
                 <h6 class="text-muted">Prossimo Pagamento</h6>
                 <h2 class="mb-0 text-danger">Dec 30</h2>
             </div>
-        </div>
+            </div>
+
     </div>
 
     <!-- Charts Row -->
-    <div class="mb-4 row g-4">
-        <div class="col-lg-8">
-            <div class="p-4 shadow card">
-                <h5 class="card-title">Crescita del Portafoglio</h5>
-                <canvas id="growthChart"></canvas>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="p-4 shadow card">
-                <h5 class="card-title">Distribuzione degli Investimenti</h5>
-                <canvas id="distributionChart"></canvas>
-            </div>
-        </div>
+<div class="mb-4 row g-4">
+  <div class="col-lg-8">
+    <div class="p-4 shadow card position-relative overflow-hidden">
+      <div class="overlay">Coming Soon</div>
+      <h5 class="card-title">Crescita del Portafoglio</h5>
+      <canvas id="growthChart"></canvas>
     </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="p-4 shadow card position-relative overflow-hidden">
+      <div class="overlay">Coming Soon</div>
+      <h5 class="card-title">Distribuzione degli Investimenti</h5>
+      <canvas id="distributionChart"></canvas>
+    </div>
+  </div>
+</div>
+
 
     <!-- Interactive Panels -->
-    <div class="row g-4">
-        <div class="col-lg-6">
-            <div class="p-4 shadow card h-100">
-                <h5 class="card-title">Aggiornamenti Live</h5>
-                <ul class="overflow-auto list-group list-group-flush" style="max-height: 250px;">
-                    <li class="list-group-item">🚀 Nuovo progetto Alpha lanciato.</li>
-                    <li class="list-group-item">💰 Rapporto trimestrale caricato.</li>
-                    <li class="list-group-item">📈 Esposizione Bitcoin aumentata.</li>
-                    <li class="list-group-item">📑 Contratto NDA disponibile nei documenti.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="p-4 shadow card h-100">
-                <h5 class="card-title">Feedback Rapido</h5>
-                <form>
-                    <div class="mb-3">
-                        <textarea class="form-control" rows="4" placeholder="Condividi i tuoi pensieri..."></textarea>
-                    </div>
-                    <button class="btn btn-primary">Invia</button>
-                </form>
-            </div>
-        </div>
+<div class="row g-4">
+  <div class="col-lg-6">
+    <div class="p-4 shadow card h-100 position-relative overflow-hidden">
+      <div class="overlay">Coming Soon</div>
+      <h5 class="card-title">Aggiornamenti Live</h5>
+      <ul class="overflow-auto list-group list-group-flush" style="max-height: 250px;">
+        <li class="list-group-item">🚀 Nuovo progetto Alpha lanciato.</li>
+        <li class="list-group-item">💰 Rapporto trimestrale caricato.</li>
+        <li class="list-group-item">📈 Esposizione Bitcoin aumentata.</li>
+        <li class="list-group-item">📑 Contratto NDA disponibile nei documenti.</li>
+      </ul>
     </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="p-4 shadow card h-100 position-relative overflow-hidden">
+      <div class="overlay">Coming Soon</div>
+      <h5 class="card-title">Feedback Rapido</h5>
+      <form>
+        <div class="mb-3">
+          <textarea class="form-control" rows="4" placeholder="Condividi i tuoi pensieri..."></textarea>
+        </div>
+        <button class="btn btn-primary">Invia</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 
 </div>
 

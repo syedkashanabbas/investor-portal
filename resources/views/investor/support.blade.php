@@ -7,12 +7,16 @@
 
   {{-- Header --}}
   <div class="d-flex align-items-center justify-content-between mb-3">
-    <div>
-      <h1 class="h3 mb-1" data-aos="fade-right">Q&amp;A Diretto / Supporto</h1>
-      <p class="text-muted mb-0" data-aos="fade-right" data-aos-delay="100">
-        Fai domande direttamente. Il nostro team risponde qui.
-      </p>
-    </div>
+  <div>
+  <h1 class="h3 mb-1" data-aos="fade-right">Q&amp;A Diretto / Supporto</h1>
+  <p class="text-muted mb-0" data-aos="fade-right" data-aos-delay="100">
+    Fai domande direttamente. Il nostro team risponde qui.
+  </p>
+  <p class="text-muted mt-2" data-aos="fade-right" data-aos-delay="150">
+    Per assistenza, contatta <a href="mailto:info@ethica.holdings" class="text-primary fw-semibold">info@ethica.holdings</a>.
+  </p>
+</div>
+
     <div class="text-end" data-aos="fade-left">
       <div class="small text-muted">Accesso come</div>
       <div class="fw-semibold" id="displayName">{{ $displayName }}</div>

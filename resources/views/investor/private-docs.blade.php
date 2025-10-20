@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container-fluid py-4">
-
+  <div class="overlay-local"><span>Coming Soon</span></div>
   {{-- Header --}}
   <div class="d-flex align-items-center justify-content-between mb-3">
     <div>
