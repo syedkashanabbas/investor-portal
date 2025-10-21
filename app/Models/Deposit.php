@@ -17,6 +17,7 @@ class Deposit extends Model
         'payment_method',
         'status',
         'remarks',
+        'document_path',
     ];
 
     public function user()
