@@ -6,12 +6,20 @@
 <div class="container-fluid py-4">
   <div class="d-flex align-items-center justify-content-between mb-4">
     <div>
-      <h1 class="h3 mb-1">I tuoi Depositi</h1>
-      <p class="text-muted mb-0">Riepilogo dei tuoi depositi recenti.</p>
+      <h1 class="h3 mb-1">Depositi</h1>
+      <p class="text-muted mb-0">Riepilogo dei depositi (attivi e rimossi).</p>
     </div>
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDepositModal">
-      <i class="fas fa-plus me-1"></i> Nuovo Deposito
-    </button>
+
+    @if(auth()->user()->isAdmin())
+      <div class="d-flex gap-2">
+        <a href="{{ route('investor.deposits.trashed') }}" class="btn btn-outline-dark">
+          <i class="fas fa-trash-restore me-1"></i> View Trashed
+        </a>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDepositModal">
+          <i class="fas fa-plus me-1"></i> Nuovo Deposito
+        </button>
+      </div>
+    @endif
   </div>
 
   <div class="card border-0 shadow-sm">
@@ -20,35 +28,49 @@
         <table class="table align-middle mb-0">
           <thead class="table-light">
             <tr>
+              <th>Utente</th>
               <th>Riferimento</th>
               <th>Importo</th>
               <th>Metodo</th>
+              <th>Documento</th>
               <th>Stato</th>
-              <th>Data</th>
-              <th></th>
+              <th>Deposited Date</th>
+              <th class="text-end">Azioni</th>
             </tr>
           </thead>
           <tbody id="depositTable">
             @forelse($deposits as $dep)
               <tr data-id="{{ $dep->id }}">
+                <td>{{ $dep->user->name ?? '-' }}</td>
                 <td>{{ $dep->reference_no }}</td>
                 <td>£{{ number_format($dep->amount, 2) }}</td>
                 <td>{{ $dep->payment_method ?? '-' }}</td>
+                <td>
+                  @if($dep->document_path)
+                    <a href="{{ asset('storage/'.$dep->document_path) }}" target="_blank" class="btn btn-sm btn-outline-info">
+                      <i class="fas fa-file"></i> View
+                    </a>
+                  @else
+                    <span class="text-muted">No Doc</span>
+                  @endif
+                </td>
                 <td>
                   <span class="status-badge status-{{ $dep->status }}">{{ ucfirst($dep->status) }}</span>
                 </td>
                 <td>{{ $dep->created_at->format('d M Y') }}</td>
                 <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary edit-btn" data-bs-toggle="modal" data-bs-target="#editDepositModal" data-deposit='@json($dep)'>
-                    <i class="fas fa-edit"></i>
-                  </button>
-                  <button class="btn btn-sm btn-outline-danger delete-btn" data-id="{{ $dep->id }}">
-                    <i class="fas fa-trash"></i>
-                  </button>
+                  @if(auth()->user()->isAdmin())
+                    <button class="btn btn-sm btn-outline-secondary edit-btn" data-bs-toggle="modal" data-bs-target="#editDepositModal" data-deposit='@json($dep)'>
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger delete-btn" data-id="{{ $dep->id }}">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  @endif
                 </td>
               </tr>
             @empty
-              <tr><td colspan="6" class="text-center text-muted py-4">Nessun deposito trovato.</td></tr>
+              <tr><td colspan="8" class="text-center text-muted py-4">Nessun deposito trovato.</td></tr>
             @endforelse
           </tbody>
         </table>
@@ -57,67 +79,11 @@
   </div>
 </div>
 
-{{-- Add Modal --}}
-<div class="modal fade" id="addDepositModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content border-0 shadow-sm">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title">Nuovo Deposito</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <form id="addDepositForm">
-          @csrf
-          <div class="mb-3">
-            <label class="form-label">Importo (£)</label>
-            <input type="number" class="form-control" name="amount" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Metodo di Pagamento</label>
-            <input type="text" class="form-control" name="payment_method" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Note</label>
-            <textarea class="form-control" name="remarks" rows="2"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Aggiungi</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+@if(auth()->user()->isAdmin())
 
-{{-- Edit Modal --}}
-<div class="modal fade" id="editDepositModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content border-0 shadow-sm">
-      <div class="modal-header bg-dark text-white">
-        <h5 class="modal-title">Modifica Deposito</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <form id="editDepositForm">
-          @csrf
-          @method('PUT')
-          <input type="hidden" name="id">
-          <div class="mb-3">
-            <label class="form-label">Importo (£)</label>
-            <input type="number" class="form-control" name="amount" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Metodo di Pagamento</label>
-            <input type="text" class="form-control" name="payment_method" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Note</label>
-            <textarea class="form-control" name="remarks" rows="2"></textarea>
-          </div>
-          <button type="submit" class="btn btn-dark w-100">Aggiorna</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+@include('investor.deposits.components.add-deposit-modal')
+@include('investor.deposits.components.edit-deposit-modal')
+@endif
 
 <style>
 .status-badge { padding: .35rem .75rem; border-radius: 8px; text-transform: capitalize; font-weight: 600; }

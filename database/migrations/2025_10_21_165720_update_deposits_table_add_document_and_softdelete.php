@@ -9,12 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+  public function up()
     {
         Schema::table('deposits', function (Blueprint $table) {
-            $table->string('document_path')->nullable();
+            $table->string('document_path')->nullable()->after('remarks');
+            $table->softDeletes();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -22,9 +24,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('deposits', function (Blueprint $table) {
-             $table->dropColumn([
-                'document_path',
-            ]);
+            $table->dropColumn('document_path');
+            $table->dropSoftDeletes();
         });
     }
 };
