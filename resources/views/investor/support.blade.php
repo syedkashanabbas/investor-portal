@@ -112,10 +112,14 @@
         <div class="card-header bg-white border-0">
           <div class="h6 mb-0"><i class="fas fa-question-circle me-2 text-warning"></i>FAQ</div>
         </div>
-        <div class="card-body small">
-          <p class="mb-2"><strong>Dove trovo i riepiloghi trimestrali?</strong><br>Report Finanziari → filtra per Q1/Q2/Q3/Q4.</p>
-          <p class="mb-2"><strong>Come richiedere documenti?</strong><br>Chiedi qui; li alleghiamo o te li inviamo via email.</p>
-          <p class="mb-0"><strong>E i rischi?</strong><br>Vai a Stato Progetto → badge “Rischio/Attenzione/Tranquillo”.</p>
+        <div class="card-body small"> 
+          <p class="mb-2"><strong>Com’è stata la tua prima impressione del progetto?</strong><br>Hai percepito chiarezza, trasparenza e una visione solida?</p>
+          <p class="mb-2"><strong>Le informazioni fornite (report, prospetti, stato progetto) sono state sufficienti?</strong><br>Hai trovato facile reperirle e comprenderle?</p>
+          <p class="mb-2"><strong>Come valuti la comunicazione con il team?</strong><br>Risposte rapide, tono professionale, disponibilità alle domande?</p>
+          <p class="mb-2"><strong>Ti senti aggiornato sugli sviluppi e i rischi del progetto?</strong><br>Vorresti aggiornamenti più frequenti o sintetici?</p>
+          <p class="mb-2"><strong>Quanto ti senti sicuro della direzione finanziaria?</strong><br>Ti sembrano realistici i piani di crescita e i margini previsti?</p>
+          <p class="mb-2"><strong>Consiglieresti questo investimento ad altri?</strong><br>Perché sì o perché no?</p>
+          <p class="mb-0"><strong>Hai suggerimenti o preoccupazioni da condividere?</strong><br>Ogni osservazione ci aiuta a migliorare il rapporto investitore–progetto.</p>
         </div>
       </div>
     </div>
