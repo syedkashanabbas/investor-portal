@@ -9,6 +9,8 @@ use App\Models\Deposit;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -135,37 +137,64 @@ class DashboardController extends Controller
 
         return view('investor.support', compact('thread','categories','priorities','displayName'));
     }
+public function supportSend(Request $request)
+{
+    $data = $request->validate([
+        'name'      => 'required|string|max:80',
+        'category'  => 'required|string|max:40',
+        'priority'  => 'required|string|max:20',
+        'message'   => 'required|string|max:4000',
+    ]);
 
-    public function supportSend(Request $request)
-    {
-        // demo: validate + echo back; you’ll persist later
-        $data = $request->validate([
-            'name'      => 'required|string|max:80',
-            'category'  => 'required|string|max:40',
-            'priority'  => 'required|string|max:20',
-            'message'   => 'required|string|max:4000',
-        ]);
-
-        // if you later allow guests, you could store guest name in session
-        if (!auth()->check()) {
-            session(['guest_name' => $data['name']]);
-        }
-
-        // pretend “created” message
-        return response()->json([
-            'ok'   => true,
-            'item' => [
-                'id'   => random_int(1000,9999),
-                'at'   => now()->format('Y-m-d H:i'),
-                'from' => 'Tu',
-                'name' => $data['name'],
-                'role' => 'utente',
-                'msg'  => $data['message'],
-                'meta' => ['category'=>$data['category'],'priority'=>$data['priority']],
-            ],
-            'toast' => 'Messaggio inviato. Il nostro team risponderà qui.'
-        ]);
+    if (!auth()->check()) {
+        session(['guest_name' => $data['name']]);
     }
+
+    // Prepare email content
+    $subject = "[Supporto Investor] Nuovo messaggio da {$data['name']}";
+    $body = "
+        <h3>Hai ricevuto un nuovo messaggio di supporto</h3>
+        <p><strong>Nome:</strong> {$data['name']}</p>
+        <p><strong>Categoria:</strong> {$data['category']}</p>
+        <p><strong>Priorità:</strong> {$data['priority']}</p>
+        <p><strong>Messaggio:</strong><br>{$data['message']}</p>
+        <hr>
+        <p>Inviato da: <em>{$request->ip()}</em> - " . now()->format('Y-m-d H:i') . "</p>
+    ";
+
+    // Find all admins
+    $admins = User::where('role', 'admin')->pluck('email')->toArray();
+
+    // Send email to admins
+    try {
+        Mail::send([], [], function ($message) use ($admins, $subject, $body) {
+            $message->to($admins)
+                ->subject($subject)
+                ->html($body); // ✅ use html() instead of setBody()
+        });
+    } catch (\Throwable $e) {
+        logger()->error('Mail send failed: ' . $e->getMessage());
+    }
+
+    // Return JSON response
+    return response()->json([
+        'ok'   => true,
+        'item' => [
+            'id'   => random_int(1000, 9999),
+            'at'   => now()->format('Y-m-d H:i'),
+            'from' => 'Tu',
+            'name' => $data['name'],
+            'role' => 'utente',
+            'msg'  => $data['message'],
+            'meta' => [
+                'category' => $data['category'],
+                'priority' => $data['priority']
+            ],
+        ],
+        'toast' => 'Messaggio inviato. Il nostro team è stato notificato via email.'
+    ]);
+}
+
 
     public function futurePreview()
     {

@@ -98,7 +98,7 @@
 
       // fake agent auto-ack
       setTimeout(()=> {
-        renderAgentMsg('Thanks! We got your message and will follow up here.');
+        renderAgentMsg('Thanks! We got your message and will follow up on your mail.');
         scrollBottom();
       }, 500);
 
