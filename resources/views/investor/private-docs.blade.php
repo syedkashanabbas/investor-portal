@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container-fluid py-4">
-  <div class="overlay-local"><span>Coming Soon</span></div>
+
   {{-- Header --}}
   <div class="d-flex align-items-center justify-content-between mb-3">
     <div>
@@ -15,6 +15,10 @@
       <button class="btn btn-outline-secondary" id="btnGrid"><i class="fas fa-th"></i></button>
       <button class="btn btn-outline-secondary" id="btnList"><i class="fas fa-list"></i></button>
     </div>
+    @if(session('success'))
+  <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+
   </div>
 
   <div class="row g-3">
@@ -34,6 +38,37 @@
 
     {{-- Right: Explorer --}}
     <div class="col-12 col-lg-9">
+      
+      {{-- Upload Section --}}
+      <div class="card border-0 shadow-sm mb-3" data-aos="fade-up">
+        <div class="card-body">
+          <form id="uploadForm" enctype="multipart/form-data">
+            @csrf
+            <div class="row align-items-end g-2">
+              <div class="col-md-5">
+                <label class="form-label small mb-1 text-muted">Cartella</label>
+                <select name="folder" id="uploadFolder" class="form-select">
+                  @foreach($folders as $f)
+                    @if($f['parent'])
+                      <option value="{{ $f['name'] }}">{{ $f['name'] }}</option>
+                    @endif
+                  @endforeach
+                </select>
+              </div>
+              <div class="col-md-5">
+                <label class="form-label small mb-1 text-muted">Seleziona File</label>
+                <input type="file" name="file" id="uploadFile" class="form-control" required>
+              </div>
+              <div class="col-md-2">
+                <button type="submit" class="btn btn-dark w-100">
+                  <i class="fas fa-upload me-1"></i>Carica
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
       {{-- Toolbar --}}
       <div class="card border-0 shadow-sm mb-3" data-aos="fade-up">
         <div class="card-body">
@@ -111,7 +146,6 @@
   </div>
 </div>
 
-
 {{-- Seeds to JS --}}
 <script id="seedFolders" type="application/json">@json($folders)</script>
 <script id="seedFiles" type="application/json">@json($files)</script>
@@ -138,4 +172,52 @@
 
 @push('scripts')
 <script src="{{ asset('assets/js/private-docs.js') }}"></script>
+
+<script>
+document.querySelector('#uploadForm')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const btn = form.querySelector('button');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Caricamento...';
+
+  try {
+    const res = await fetch('{{ route("investor.docs.upload") }}', {
+      method: 'POST',
+      headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+      body: data
+    });
+
+    // Explicitly check status before parsing
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const out = await res.json();
+
+    if (out.success) {
+      toast('File caricato con successo!');
+      form.reset();
+
+      // Fix spinner instantly
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-upload me-1"></i>Carica';
+
+      // Refresh page smoothly after short delay
+      setTimeout(() => {
+        window.location.href = '{{ route("investor.docs") }}';
+      }, 700);
+    } else {
+      toast('Errore durante il caricamento.');
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-upload me-1"></i>Carica';
+    }
+  } catch (err) {
+    console.error('Upload error:', err);
+    toast('Upload fallito.');
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-upload me-1"></i>Carica';
+  }
+});
+
+</script>
 @endpush

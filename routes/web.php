@@ -56,6 +56,9 @@ Route::middleware([
         
          Route::get('/investor/docs', [DashboardController::class, 'privateDocs'])
         ->name('investor.docs');
+        Route::post('/investor/docs/upload', [DashboardController::class, 'privateDocsUpload'])
+        ->name('investor.docs.upload');
+
 
     // Signed download URLs (prevents random guessing)
     Route::get('/investor/docs/download/{id}', [DashboardController::class, 'privateDocsDownload'])

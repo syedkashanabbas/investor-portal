@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="container-fluid py-4">
-  <div class="overlay-local"><span>Coming Soon</span></div>
+  {{-- <div class="overlay-local"><span>Coming Soon</span></div> --}}
   {{-- Header --}}
   <div class="d-flex align-items-center justify-content-between mb-4">
     <div>
@@ -107,8 +107,8 @@
   <!--    </div>-->
   <!--  </div>-->
   <!--</div>-->
-  <div class="card border-0 shadow-sm mb-4 position-relative overflow-hidden">
-  <!-- Blurred body -->
+  {{-- <div class="card border-0 shadow-sm mb-4 position-relative overflow-hidden">
+
   <div class="card-body filter-blur">
     <div class="row g-3 align-items-center">
       <div class="col-12 col-lg-4">
@@ -126,11 +126,11 @@
     </div>
   </div>
 
-  <!-- Overlay -->
+
   <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-50">
     <span class="text-white fw-bold fs-3 text-uppercase">Coming Soon</span>
   </div>
-</div>
+</div> --}}
 
 <style>
   .filter-blur {
@@ -147,54 +147,54 @@
       <div class="row g-3" id="eduGrid">
 
         {{-- Cards --}}
-      <div class="col-12 col-md-6">
-  <div class="card border-0 shadow-sm edu-card position-relative overflow-hidden"
-       data-title="Bitcoin Halving: Segnale o Rumore?"
-       data-topic="crypto"
-       data-type="video"
-       data-level="beginner"
-       data-tags="btc,cycle,miners"
-       data-length="420"
-       data-date="2025-04-20"
-       data-pop="96">
+      {{-- <div class="col-12 col-md-6">
+        <div class="card border-0 shadow-sm edu-card position-relative overflow-hidden"
+            data-title="Bitcoin Halving: Segnale o Rumore?"
+            data-topic="crypto"
+            data-type="video"
+            data-level="beginner"
+            data-tags="btc,cycle,miners"
+            data-length="420"
+            data-date="2025-04-20"
+            data-pop="96">
 
-    <!-- Blurred body -->
-    <div class="card-body filter-blur">
-      <div class="thumb ratio ratio-16x9 rounded overflow-hidden mb-2 position-relative">
-        <img
-          class="w-100 h-100 object-fit-cover img-safe"
-          data-seed="btc-halving"
-          data-w="1200"
-          data-h="675"
-          alt="Bitcoin Halving">
-        <span class="badge bg-dark text-white position-absolute end-0 m-2">7:00</span>
-        <button class="btn btn-light btn-sm rounded-circle position-absolute bottom-0 start-0 m-2 shadow play-btn"
-                data-bs-toggle="modal" data-bs-target="#playerModal"
-                data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Riproduci">
-          <i class="fas fa-play"></i>
-        </button>
-      </div>
-      <h3 class="h6 mb-1">Bitcoin Halving: Segnale o Rumore?</h3>
-      <div class="small text-muted mb-2">Crypto • Principiante • Pubblicato 2025-04-20</div>
-      <p class="small text-muted mb-2">Cosa cambia davvero, cosa no, e come si adattano i miner.</p>
-      <div class="d-flex justify-content-between">
-        <div class="d-flex flex-wrap gap-1">
-          <span class="badge bg-light text-dark">BTC</span>
-          <span class="badge bg-light text-dark">Cicli</span>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-sm btn-outline-secondary queue-btn" data-queue='{"title":"Bitcoin Halving","type":"video","len":420}'>Metti in coda</button>
-          <button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#detailModal" data-detail='{"title":"Bitcoin Halving: Segnale o Rumore?","desc":"Note di approfondimento e link.","res":["Cheat Sheet.pdf","Metriche On-chain.xlsx"]}'>Dettagli</button>
-        </div>
-      </div>
-    </div>
+          <!-- Blurred body -->
+          <div class="card-body filter-blur">
+            <div class="thumb ratio ratio-16x9 rounded overflow-hidden mb-2 position-relative">
+              <img
+                class="w-100 h-100 object-fit-cover img-safe"
+                data-seed="btc-halving"
+                data-w="1200"
+                data-h="675"
+                alt="Bitcoin Halving">
+              <span class="badge bg-dark text-white position-absolute end-0 m-2">7:00</span>
+              <button class="btn btn-light btn-sm rounded-circle position-absolute bottom-0 start-0 m-2 shadow play-btn"
+                      data-bs-toggle="modal" data-bs-target="#playerModal"
+                      data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Riproduci">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <h3 class="h6 mb-1">Bitcoin Halving: Segnale o Rumore?</h3>
+            <div class="small text-muted mb-2">Crypto • Principiante • Pubblicato 2025-04-20</div>
+            <p class="small text-muted mb-2">Cosa cambia davvero, cosa no, e come si adattano i miner.</p>
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-wrap gap-1">
+                <span class="badge bg-light text-dark">BTC</span>
+                <span class="badge bg-light text-dark">Cicli</span>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-sm btn-outline-secondary queue-btn" data-queue='{"title":"Bitcoin Halving","type":"video","len":420}'>Metti in coda</button>
+                <button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#detailModal" data-detail='{"title":"Bitcoin Halving: Segnale o Rumore?","desc":"Note di approfondimento e link.","res":["Cheat Sheet.pdf","Metriche On-chain.xlsx"]}'>Dettagli</button>
+              </div>
+            </div>
+          </div>
 
-    <!-- Overlay -->
-    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-50">
-      <span class="text-white fw-bold fs-3 text-uppercase">Coming Soon</span>
-    </div>
-  </div>
-</div>
+          <!-- Overlay -->
+          <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-50">
+            <span class="text-white fw-bold fs-3 text-uppercase">Coming Soon</span>
+          </div>
+        </div>
+      </div>
         <div class="col-12 col-md-6"  data-aos-delay="50">
           <div class="card border-0 shadow-sm edu-card"
                data-title="Curve dei Rendimenti: Indicatore di Recessione 101"
@@ -221,58 +221,58 @@
               </div>
             </div>
           </div>
+        </div> --}}
+
+    {{-- <div class="col-12 col-md-6">
+    <div class="card border-0 shadow-sm edu-card position-relative overflow-hidden"
+        data-title="Ampiezza di Mercato: Quanto è Sano il Rally?"
+        data-topic="markets"
+        data-type="video"
+        data-level="intermediate"
+        data-tags="breadth,advance-decline,etfs"
+        data-length="540"
+        data-date="2025-06-10"
+        data-pop="74">
+
+      <!-- Blurred body -->
+      <div class="card-body filter-blur">
+        <div class="thumb ratio ratio-16x9 rounded overflow-hidden mb-2 position-relative">
+          <img
+            class="w-100 h-100 object-fit-cover img-safe"
+            data-seed="market-breadth"
+            data-w="1200"
+            data-h="675"
+            alt="Ampiezza di Mercato">
+          <span class="badge bg-dark text-white position-absolute end-0 m-2">9:00</span>
+          <button class="btn btn-light btn-sm rounded-circle position-absolute bottom-0 start-0 m-2 shadow play-btn"
+                  data-bs-toggle="modal" data-bs-target="#playerModal"
+                  data-src="https://player.vimeo.com/video/357274789" title="Riproduci">
+            <i class="fas fa-play"></i>
+          </button>
         </div>
-
-    <div class="col-12 col-md-6">
-  <div class="card border-0 shadow-sm edu-card position-relative overflow-hidden"
-       data-title="Ampiezza di Mercato: Quanto è Sano il Rally?"
-       data-topic="markets"
-       data-type="video"
-       data-level="intermediate"
-       data-tags="breadth,advance-decline,etfs"
-       data-length="540"
-       data-date="2025-06-10"
-       data-pop="74">
-
-    <!-- Blurred body -->
-    <div class="card-body filter-blur">
-      <div class="thumb ratio ratio-16x9 rounded overflow-hidden mb-2 position-relative">
-        <img
-          class="w-100 h-100 object-fit-cover img-safe"
-          data-seed="market-breadth"
-          data-w="1200"
-          data-h="675"
-          alt="Ampiezza di Mercato">
-        <span class="badge bg-dark text-white position-absolute end-0 m-2">9:00</span>
-        <button class="btn btn-light btn-sm rounded-circle position-absolute bottom-0 start-0 m-2 shadow play-btn"
-                data-bs-toggle="modal" data-bs-target="#playerModal"
-                data-src="https://player.vimeo.com/video/357274789" title="Riproduci">
-          <i class="fas fa-play"></i>
-        </button>
+        <h3 class="h6 mb-1">Ampiezza di Mercato: Quanto è Sano il Rally?</h3>
+        <div class="small text-muted mb-2">Mercati • Intermedio • Pubblicato 2025-06-10</div>
+        <p class="small text-muted mb-2">Come individuare leadership ristrette o partecipazione ampia con rapporti semplici.</p>
+        <div class="d-flex justify-content-between">
+          <div class="d-flex flex-wrap gap-1">
+            <span class="badge bg-light text-dark">Ampiezza</span>
+            <span class="badge bg-light text-dark">ETF</span>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-sm btn-outline-secondary queue-btn" data-queue='{"title":"Market Breadth","type":"video","len":540}'>Metti in coda</button>
+            <button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#detailModal" data-detail='{"title":"Ampiezza Mercato: Rally Sano?","desc":"Trucchi advance/decline.","res":["Rapporti Ampiezza.pdf"]}'>Dettagli</button>
+          </div>
+        </div>
       </div>
-      <h3 class="h6 mb-1">Ampiezza di Mercato: Quanto è Sano il Rally?</h3>
-      <div class="small text-muted mb-2">Mercati • Intermedio • Pubblicato 2025-06-10</div>
-      <p class="small text-muted mb-2">Come individuare leadership ristrette o partecipazione ampia con rapporti semplici.</p>
-      <div class="d-flex justify-content-between">
-        <div class="d-flex flex-wrap gap-1">
-          <span class="badge bg-light text-dark">Ampiezza</span>
-          <span class="badge bg-light text-dark">ETF</span>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-sm btn-outline-secondary queue-btn" data-queue='{"title":"Market Breadth","type":"video","len":540}'>Metti in coda</button>
-          <button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#detailModal" data-detail='{"title":"Ampiezza Mercato: Rally Sano?","desc":"Trucchi advance/decline.","res":["Rapporti Ampiezza.pdf"]}'>Dettagli</button>
-        </div>
+
+      <!-- Overlay -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-50">
+        <span class="text-white fw-bold fs-3 text-uppercase">Coming Soon</span>
       </div>
     </div>
+  </div> --}}
 
-    <!-- Overlay -->
-    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-50">
-      <span class="text-white fw-bold fs-3 text-uppercase">Coming Soon</span>
-    </div>
-  </div>
-</div>
-
-        <div class="col-12 col-md-6"  data-aos-delay="50">
+        {{-- <div class="col-12 col-md-6"  data-aos-delay="50">
           <div class="card border-0 shadow-sm edu-card"
                data-title="AI nella Finanza: Hype o Reali Vantaggi Operativi"
                data-topic="ai"
@@ -298,7 +298,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
 
       </div>
 
