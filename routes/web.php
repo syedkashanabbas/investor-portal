@@ -19,8 +19,8 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/investor/projects/status', [DashboardController::class, 'projectStatus'])
-        ->name('investor.projects.status');
+    // Route::get('/investor/projects/status', [DashboardController::class, 'projectStatus'])
+    //     ->name('investor.projects.status');
     // Route::get('/investor/deposits', [InvestorDepositController::class, 'index'])
     //     ->name('investor.deposits.index');
         Route::prefix('investor')->name('investor.')->group(function () {
@@ -30,20 +30,20 @@ Route::middleware([
             Route::delete('deposits/{id}/force-delete', [InvestorDepositController::class, 'forceDelete'])->name('deposits.forceDelete');
         });
 
-    Route::get('/investor/reports', [DashboardController::class, 'financialReports'])
-        ->name('investor.reports');
+    // Route::get('/investor/reports', [DashboardController::class, 'financialReports'])
+    //     ->name('investor.reports');
 
     Route::post('/investor/reports/upload', [DashboardController::class, 'uploadReport'])
         ->name('investor.reports.upload');
 
-    Route::get('/investor/strategy-access', [DashboardController::class, 'strategyAccess'])
-        ->name('investor.strategy.access');
+    // Route::get('/investor/strategy-access', [DashboardController::class, 'strategyAccess'])
+    //     ->name('investor.strategy.access');
 
     Route::get('/investor/education', [DashboardController::class, 'investorEducation'])
         ->name('investor.education');
         
-    Route::get('/investor/live', [DashboardController::class, 'liveUpdates'])
-        ->name('investor.live');
+    // Route::get('/investor/live', [DashboardController::class, 'liveUpdates'])
+    //     ->name('investor.live');
      Route::get('/investor/support', [DashboardController::class, 'support'])
         ->name('investor.support');
     Route::post('/investor/support/send', [DashboardController::class, 'supportSend'])

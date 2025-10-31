@@ -30,29 +30,29 @@
     
 
 
-      <li class="sidebar_item">
+      {{-- <li class="sidebar_item">
         <a href="{{ route('investor.projects.status') }}"
            class="sidebar_link d-flex align-items-center text-decoration-none {{ request()->routeIs('investor.projects.status') ? 'active' : '' }}">
           <span class="sidebar_link_icon"><i class="fas fa-project-diagram"></i></span>
           <span class="sidebar_link_text fs_7 fw-medium">Stato Progetti</span>
         </a>
-      </li>
+      </li> --}}
 
-      <li class="sidebar_item">
+      {{-- <li class="sidebar_item">
         <a href="{{ route('investor.reports') }}"
            class="sidebar_link d-flex align-items-center text-decoration-none {{ request()->routeIs('investor.reports') ? 'active' : '' }}">
           <span class="sidebar_link_icon"><i class="fas fa-chart-line"></i></span>
           <span class="sidebar_link_text fs_7 fw-medium">Report Finanziari</span>
         </a>
-      </li>
+      </li> --}}
 
-      <li class="sidebar_item">
+      {{-- <li class="sidebar_item">
         <a href="{{ route('investor.strategy.access') }}"
            class="sidebar_link d-flex align-items-center text-decoration-none {{ request()->routeIs('investor.strategy.access') ? 'active' : '' }}">
           <span class="sidebar_link_icon"><i class="fas fa-lightbulb"></i></span>
           <span class="sidebar_link_text fs_7 fw-medium">Accesso Strategie</span>
         </a>
-      </li>
+      </li> --}}
 
       <li class="sidebar_item">
         <a href="{{ route('investor.education') }}"
@@ -62,13 +62,13 @@
         </a>
       </li>
 
-      <li class="sidebar_item">
+      {{-- <li class="sidebar_item">
         <a href="{{ route('investor.live') }}"
            class="sidebar_link d-flex align-items-center text-decoration-none {{ request()->routeIs('investor.live') ? 'active' : '' }}">
           <span class="sidebar_link_icon"><i class="fas fa-bolt"></i></span>
           <span class="sidebar_link_text fs_7 fw-medium">Feed Aggiornamenti Live</span>
         </a>
-      </li>
+      </li> --}}
 
       <li class="sidebar_item">
         <a href="{{ route('investor.support') }}"

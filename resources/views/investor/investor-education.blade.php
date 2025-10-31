@@ -315,7 +315,7 @@
 
     {{-- Sidebar --}}
     <div class="col-12 col-xl-3">
-      <div class="card border-0 shadow-sm mb-3" >
+      {{-- <div class="card border-0 shadow-sm mb-3" >
         <div class="card-header bg-white border-0 d-flex justify-content-between">
           <div class="h6 mb-0">Playlist</div>
           <button class="btn btn-sm btn-outline-secondary" id="btnClearQueue" title="Svuota coda"><i class="fas fa-times"></i></button>
@@ -325,9 +325,9 @@
             <li class="text-muted">Nessun elemento in coda.</li>
           </ul>
         </div>
-      </div>
+      </div> --}}
 
-      <div class="card border-0 shadow-sm mb-3"  data-aos-delay="50">
+      {{-- <div class="card border-0 shadow-sm mb-3"  data-aos-delay="50">
         <div class="card-header bg-white border-0">
           <div class="h6 mb-0">Download</div>
         </div>
@@ -338,7 +338,7 @@
             <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fas fa-download me-2"></i>Glossario dei Rischi (PDF)</a>
           </div>
         </div>
-      </div>
+      </div> --}}
 
       <div class="card border-0 shadow-sm"  data-aos-delay="100">
         <div class="card-header bg-white border-0">

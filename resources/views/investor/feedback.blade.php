@@ -4,7 +4,8 @@
 
 @section('content')
 <div class="container-fluid py-4">
-  {{-- <div class="overlay-local"><span>Coming Soon</span></div> --}}
+
+  <div class="overlay-local"><span>Coming Soon</span></div>
 
   <div class="d-flex align-items-center justify-content-between mb-4">
     <div>
@@ -20,7 +21,7 @@
   </div>
 
   <div class="row g-3">
-    {{-- NPS + CSAT --}}
+   
   <div class="col-12 col-xl-7" data-aos="fade-up">
   <div class="card border-0 shadow-sm h-100">
     <div class="card-header bg-white border-0">

@@ -40,6 +40,7 @@
     <div class="col-12 col-lg-9">
       
       {{-- Upload Section --}}
+      @if(Auth::user() && strtolower(Auth::user()->role) == 'admin')
       <div class="card border-0 shadow-sm mb-3" data-aos="fade-up">
         <div class="card-body">
           <form id="uploadForm" enctype="multipart/form-data">
@@ -68,7 +69,7 @@
           </form>
         </div>
       </div>
-
+      @endif
       {{-- Toolbar --}}
       <div class="card border-0 shadow-sm mb-3" data-aos="fade-up">
         <div class="card-body">

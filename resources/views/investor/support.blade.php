@@ -89,24 +89,7 @@
 
     {{-- Right panel --}}
     <div class="col-12 col-lg-4">
-      <div class="card border-0 shadow-sm mb-3" data-aos="fade-left">
-        <div class="card-header bg-white border-0">
-          <div class="h6 mb-0"><i class="fas fa-life-ring me-2 text-success"></i>Azioni Rapide</div>
-        </div>
-        <div class="card-body">
-          <div class="d-grid gap-2">
-            <a href="{{ route('investor.reports') }}" class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-file-alt me-2"></i>Vai ai Report Finanziari
-            </a>
-            <a href="{{ route('investor.projects.status') }}" class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-project-diagram me-2"></i>Apri Stato Progetto
-            </a>
-            <a href="{{ route('investor.strategy.access') }}" class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-lightbulb me-2"></i>Accesso Strategie
-            </a>
-          </div>
-        </div>
-      </div>
+
 
       <div class="card border-0 shadow-sm" data-aos="fade-left" data-aos-delay="50">
         <div class="card-header bg-white border-0">
