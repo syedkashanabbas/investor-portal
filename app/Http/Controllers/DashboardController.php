@@ -398,10 +398,10 @@ public function feedbackIndex()
 
 
 
-public function supportHelp()
-{
-    return view('investor.support-help');
-}
+// public function supportHelp()
+// {
+//     return view('investor.support-help');
+// }
 
 public function feedbackSubmit(Request $request)
 {

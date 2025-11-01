@@ -73,8 +73,8 @@ Route::middleware([
 
     Route::post('/investor/feedback/poll', [\App\Http\Controllers\DashboardController::class, 'feedbackPoll'])
         ->name('investor.feedback.poll');
-    Route::get('/investor/support-help', [DashboardController::class, 'supportHelp'])
-        ->name('investor.support-help');
+    // Route::get('/investor/support-help', [DashboardController::class, 'supportHelp'])
+    //     ->name('investor.support-help');
 });
 
 // If someone hits a random URL, send to login (or dashboard if already in)
