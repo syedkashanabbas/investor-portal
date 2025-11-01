@@ -1,4 +1,6 @@
 <x-guest-layout>
+    @section('title', 'Login - ' . config('app.name', 'Laravel'))
+
     <div class="flex w-full h-screen">
         
         <!-- Left Side (Login Form) -->
