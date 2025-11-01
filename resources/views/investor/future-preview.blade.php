@@ -23,11 +23,11 @@
         Anticipazioni su ciò che verrà — segnale, non fuffa.
       </p>
     </div>
-    <div class="d-flex gap-2" data-aos="fade-left">
+    {{-- <div class="d-flex gap-2" data-aos="fade-left">
       <a href="{{ route('investor.projects.status') }}" class="btn btn-outline-secondary">
         <i class="fas fa-project-diagram me-1"></i> Progetti Attuali
       </a>
-    </div>
+    </div> --}}
   </div>
 
   {{-- Filters --}}
