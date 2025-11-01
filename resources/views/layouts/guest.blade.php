@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', config('app.name', 'Laravel'))</title>
+<meta name="description" content="@yield('meta_description', 'Ethica Holdings pioneers ethical, AI-powered finance built on transparency, sustainability, and UK regulatory excellence.')">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

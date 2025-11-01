@@ -1,5 +1,6 @@
 <x-guest-layout>
     @section('title', 'Login - ' . config('app.name', 'Laravel'))
+    @section('meta_description', 'Access your Ethica Holdings account securely. Log in to manage your investments, explore ethical AI-powered finance tools, and stay compliant with UK financial standards.')
 
     <div class="flex w-full h-screen">
         

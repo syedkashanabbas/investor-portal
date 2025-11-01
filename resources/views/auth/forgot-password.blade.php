@@ -1,6 +1,6 @@
 <x-guest-layout>
     @section('title', 'Forgot Password - ' . config('app.name', 'Laravel'))
-
+@section('meta_description', 'Reset your Ethica Holdings account password securely. Receive a reset link instantly and regain access to your ethical finance dashboard with full data protection and UK compliance.')
     <x-authentication-card>
         <x-slot name="logo">
             
