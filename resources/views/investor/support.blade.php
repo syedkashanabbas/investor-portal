@@ -25,7 +25,7 @@
 
   <div class="row g-3">
     {{-- Chat / thread --}}
-    <div class="col-12 col-lg-8" data-aos="fade-up">
+    <div class="col-12 col-lg-12" data-aos="fade-up">
       <div class="card border-0 shadow-sm h-100">
         <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
           <div class="h6 mb-0"><i class="fas fa-comments me-2 text-primary"></i>Conversazione</div>
@@ -88,7 +88,7 @@
     </div>
 
     {{-- Right panel --}}
-    <div class="col-12 col-lg-4">
+    {{-- <div class="col-12 col-lg-4">
 
 
       <div class="card border-0 shadow-sm" data-aos="fade-left" data-aos-delay="50">
@@ -105,7 +105,7 @@
           <p class="mb-0"><strong>Hai suggerimenti o preoccupazioni da condividere?</strong><br>Ogni osservazione ci aiuta a migliorare il rapporto investitore–progetto.</p>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>
 
