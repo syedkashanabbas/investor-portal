@@ -35,7 +35,7 @@
               <tr data-id="{{ $dep->id }}">
                 <td>{{ $dep->user->name ?? '-' }}</td>
                 <td>{{ $dep->reference_no }}</td>
-                <td>£{{ number_format($dep->amount, 2) }}</td>
+                <td>€{{ number_format($dep->amount, 2) }}</td>
                 <td>{{ $dep->payment_method ?? '-' }}</td>
                 <td>
                   @if($dep->document_path)

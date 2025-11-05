@@ -12,7 +12,7 @@
           @method('PUT')
           <input type="hidden" name="id">
           <div class="mb-3">
-            <label class="form-label">Importo (£)</label>
+            <label class="form-label">Importo (€)</label>
             <input type="number" class="form-control" name="amount" required>
           </div>
           <div class="mb-3">

@@ -21,7 +21,7 @@
           <div class="p-4 text-center shadow card">
               <h6 class="text-muted">Investimento Totale</h6>
               <h2 class="mb-0 text-primary">
-                  £{{ number_format($approvedDepositsTotal, 2) }}
+                  €{{ number_format($approvedDepositsTotal, 2) }}
               </h2>
           </div>
       </div>
